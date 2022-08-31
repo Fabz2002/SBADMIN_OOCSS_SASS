@@ -1,0 +1,23 @@
+@use "footer/Footer";
+@use "../../utilities/Utilities";
+.dashboard__main {
+    grid-area: main;
+    grid-area: row-middle/col-middle/row-end/col-end;
+    background-color: #ec7b18;
+    animation: fadeIn 1s;
+    position: relative;
+    padding-bottom: Utilities.sizeEM(17.5);
+    min-height: 100%;
+
+    
+    @keyframes fadeIn {
+      0% {
+        width: calc(100% + 14rem);
+        transform: translateX(-14rem);
+      }
+      100% {
+        width: 100%;
+        transform: translateX(0);
+      }
+    }
+  }

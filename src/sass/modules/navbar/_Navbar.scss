@@ -1,0 +1,94 @@
+@use "../../utilities/Utilities";
+.dashboard__navbar {
+    grid-area: navbar;
+    grid-area: row-start/col-start/row-middle/col-end;
+    background-color: Utilities.$primary-color;
+    color:Utilities.$whitesmoke;
+
+    //Propiedades de la barra de navegación
+    display: grid;
+    grid-template-columns: [c-start]14rem [c2]1fr[c3] 7rem[c-end];
+    grid-template-rows: [r-start]1fr[r-end];
+}
+
+.navbar {
+    &__h1 {
+        @include Utilities.flex-centerAlignItems;
+        padding-left: Utilities.sizeREM(5);
+        font-size: Utilities.sizeREM(6.5);
+        font-weight: 400;
+    }
+
+    &__blockOptions {
+        @include Utilities.flex-centerAlignItems;
+        justify-content: space-between;
+    }
+}
+
+// blockOptions
+
+.blockOptions {
+    &__label {
+        font-size: Utilities.sizeREM(5);
+        color: Utilities.$label-color;
+        padding-left: Utilities.sizeREM(5);
+        cursor: pointer;
+    }
+
+    &__search {
+        display: flex;
+        padding-right: Utilities.sizeREM(5);
+    }
+}
+
+.search {
+    &__input {
+        width: 100%;
+        height: Utilities.sizeREM(10);
+        border: Utilities.$desaparecer;
+        background-color: Utilities.$terciary-color;
+        padding-left: Utilities.sizeREM(5);
+        font-size: Utilities.sizeREM(5);
+        color: Utilities.$secundary-color;
+    }
+
+    &__button {
+        border-radius: 0 Utilities.sizeREM(1.25) Utilities.sizeREM(1.25) 0;
+        padding-left: Utilities.sizeREM(4);
+        padding-right: Utilities.sizeREM(4);
+        background-color: Utilities.$blue-color;
+    }
+}
+
+// dropdownUser
+
+.dropdownUser {
+    &__checkbox {
+        display: Utilities.$desaparecer;
+    }
+
+    &__checkbox:checked~&__options {
+        display: block;
+    }
+
+    &__icons {
+        @include Utilities.flex-centerAlignItems;
+        height: 100%;
+        gap: Utilities.sizeREM(2.5);
+        justify-content: center;
+        color: Utilities.$label-color;
+        cursor: pointer;
+    }
+
+    &__options {
+        background-color: #005ed1;
+        display: Utilities.$desaparecer;
+        position: absolute;
+        width: Utilities.sizeREM(60);
+        height: Utilities.sizeREM(50);
+        right: 0;
+        margin-right: Utilities.sizeREM(10);
+        top: Utilities.sizeREM(15);
+        z-index: 1;
+    }
+}

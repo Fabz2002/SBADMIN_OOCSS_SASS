@@ -1,0 +1,53 @@
+@use '../../utilities/Utilities';
+
+.dashboard__sidebar {
+    grid-area: sidebar;
+    grid-area: row-middle/col-start/row-end/col-middle;
+    background-color: Utilities.$primary-color;
+  
+    // propiedades del sidebar
+    display: grid;
+    grid-template-columns: [col-start] 1fr [col-end];
+    grid-template-rows: [row-start]1fr [row-middle]Utilities.sizeREM(21)[row-end];
+    color: Utilities.$sidebar-color;
+  }
+  
+  .sidebar {
+    &__menu {
+      @include Utilities.flex-column;
+      padding-top: Utilities.sizeREM(10);
+    }
+  
+    &__module {
+      padding-left: Utilities.sizeREM(5);
+      padding-right: Utilities.sizeREM(5);
+      padding-bottom: Utilities.sizeREM(10);
+    }
+    &__statusLogged{
+      @include Utilities.flex-centerAlignItems;
+      padding-left: Utilities.sizeREM(5);
+      background-color: Utilities.$gray-color;
+    }
+  }
+  
+  .module {
+    &__title {
+      font-size: Utilities.sizeREM(4);
+      font-weight: bold;
+      padding-bottom: Utilities.sizeREM(5);
+    }
+  
+    &__item {
+      padding-top: Utilities.sizeREM(5);
+    }
+  
+    &__link {
+      display: flex;
+      gap: Utilities.sizeREM(2.5);
+      padding-bottom: Utilities.sizeREM(5);
+    }
+  
+    &__link:hover {
+      color: Utilities.$terciary-color;
+    }
+  }

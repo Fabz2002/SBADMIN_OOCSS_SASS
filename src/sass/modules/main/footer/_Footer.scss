@@ -1,0 +1,30 @@
+.main{
+    &__footer{
+        display: flex;
+        background-color:#E1E4EA;
+        position: absolute;
+        bottom: 0;
+        padding: 1.5em 0;
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+.footer{
+    &__a{
+        display: flex;
+        align-items: center;
+        color: #6c757d;
+        font-size: .8em;
+        margin: 0em 1em;
+    }
+    &__a--shine{
+        border-bottom: .1px solid;
+        border-color: blue;
+        color: blue;
+    }
+    &__terminosContainer{
+        display: flex;
+        align-items: center;
+    }
+}
